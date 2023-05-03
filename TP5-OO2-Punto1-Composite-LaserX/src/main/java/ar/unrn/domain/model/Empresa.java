@@ -3,15 +3,15 @@ package ar.unrn.domain.model;
 public class Empresa {
 
 	private String nombre;
-	private Empleado empleado;
+	private ListaEmpleados empleados;
 
-	public Empresa(String nombre, Empleado empleado) {
+	public Empresa(String nombre, ListaEmpleados listaEmpleadosEmpresa) {
 		this.nombre = nombre;
-		this.empleado = empleado;
+		this.empleados = listaEmpleadosEmpresa;
 	}
 
-	public int calcularMasaSalarial() {
-		return empleado.sueldo();
+	public double calcularMasaSalarial() {
+		return empleados.calcularMasaSalarial();
 	}
 
 }

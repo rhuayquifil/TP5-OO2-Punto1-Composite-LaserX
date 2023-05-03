@@ -4,8 +4,10 @@ public interface Empleado {
 
 	void agregarNuevo(Empleado empleado);
 
-	void info();
+//	void info();
 
-	int sueldo();
+	double sueldo();
+
+	double calcularMasaSalarial();
 
 }
