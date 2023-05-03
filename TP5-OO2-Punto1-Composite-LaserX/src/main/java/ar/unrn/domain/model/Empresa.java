@@ -14,11 +14,12 @@ public class Empresa {
 
 	public double calcularMasaSalarial() {
 		double masaSalarial = 0;
+
 		for (Empleado empleado : empleados) {
 			masaSalarial += empleado.calcularMasaSalarial();
 		}
+
 		return masaSalarial;
-//		return empleados.calcularMasaSalarial();
 	}
 
 }
