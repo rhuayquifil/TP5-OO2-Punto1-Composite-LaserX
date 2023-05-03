@@ -2,12 +2,14 @@ package ar.unrn.test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 import ar.unrn.domain.model.Empleado;
 import ar.unrn.domain.model.Empresa;
-import ar.unrn.domain.model.LiderDeProyectoPersonaEmpleado;
-import ar.unrn.domain.model.ListaEmpleados;
+import ar.unrn.domain.model.PersonaEmpleadoConEmpleadosACargo;
 import ar.unrn.domain.model.RegularPersonaEmpleado;
 
 class PruebasUnitarias {
@@ -17,12 +19,12 @@ class PruebasUnitarias {
 		Empleado regular1 = new RegularPersonaEmpleado("Rodrigo", "Huayquifil", 10);
 		Empleado regular2 = new RegularPersonaEmpleado("Ezequiel", "Huayquifil", 10);
 
-		Empleado liderDeProyecto1 = new LiderDeProyectoPersonaEmpleado("Manu", "Ibanez", 20);
-		liderDeProyecto1.agregarNuevo(regular1);
-		liderDeProyecto1.agregarNuevo(regular2);
+		Empleado liderDeProyecto = new PersonaEmpleadoConEmpleadosACargo("Manu", "Ibanez", 20);
+		liderDeProyecto.agregarNuevo(regular1);
+		liderDeProyecto.agregarNuevo(regular2);
 
-		ListaEmpleados listaEmpleadosEmpresa = new ListaEmpleados();
-		listaEmpleadosEmpresa.agregar(liderDeProyecto1);
+		List<Empleado> listaEmpleadosEmpresa = new ArrayList<>();
+		listaEmpleadosEmpresa.add(liderDeProyecto);
 
 		Empresa empresa = new Empresa("Mi Empresa", listaEmpleadosEmpresa);
 
